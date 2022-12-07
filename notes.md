@@ -29,14 +29,39 @@
 
 ------------------------------------------ Instalação ESLint -----------------------------------------------
 
-
+- Rodar no comando:
+    - npm install eslint -D
+    - npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D (integracao do eslint com TS)
+    - Criar o arquivo .eslintrc.js
+    - Posso copiar o que tem dentro desse arquivo para os próximos
+    - Eu deixei o eslint sem nenhuma regra para não ficar coisa demais, e toda a parte de regras de identação, colocar ponto e virgula, quebra de linha, essas coisas, vou fazer no Prettier e depois importar no arquivo do eslint.
 
 ----------------------------------------- Instalação Prettier ----------------------------------------------
 
-
+- Rodar no comando:
+    - npm i prettier eslint-config-prettier eslint-plugin-prettier -D
+    - criar o arquivo .prettierrc.js e copiar as regras que eu quero
+    - não esquecer de chamar no arquivo eslint, o arquivo do prettier
 
 ------------------------------------------- tsconfig.json --------------------------------------------------
 
-
+Configuração do Typescript mesmo
+- Rodar no comando:
+    - npx tsc --init (esse comando vai criar o arquivo tsconfig e eu vou configurar algumas coisas la)
+    - Habilitar nesse arquivo:
+        - "lib": ["ESNext", "DOM"],
+        - "outDir": "./dist",
+        - "strict": true, (aqui vem true por padrão, mas eu posso deixar true se eu estiver começando um projeto do zero. Se eu pegar um projeto pronto, o ideal é passar pra false pra nao me dar tantos erros)
+        - Adicionar isso depois do fechamento de compilerOptions: "include": ["./src"]
 
 ------------------------------------------- .editorconfig --------------------------------------------------
+
+- Clicar na raiz do projeto com o botao direito e adicionar .editorconfig
+- Copiar as configurações que eu fiz nesse projeto.
+
+----------------------------------------- Considerações extras --------------------------------------------
+
+- TUDO QUE FOR TS, OU SEJA, OS ARQUIVOS DE ENTRADA, ESTARÃO EM SRC.
+- QUANDO EU COMPILAR, ELES IRÃO PARA OUTRA PASTA DIST QUE EU CONFIGUREI NO TSCONFIG.JSON
+- O COMANDO PARA COMPILAR DE TS PARA JS DEPOIS DE JÁ CONFIGURADO, VAI SER:
+    - npx tsc
