@@ -1,0 +1,1 @@
+// Utilizar valores como tipos
